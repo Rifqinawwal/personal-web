@@ -1,11 +1,5 @@
-// src/App.js
 import React from "react";
-
-// Sesuaikan path impor ini dengan lokasi komponen Anda
-// Benar (default import)
-import SplashCursor from "./components/SplashCursor";
-
-// Impor komponen-komponen halaman Anda yang lain
+import LightningBackground from "./components/LightningBackground";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechLoop from "./components/TechLoop";
@@ -15,10 +9,10 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    // Bungkus semua elemen dengan satu elemen induk jika belum ada
-    <>
-      <SplashCursor /> {/* Letakkan komponen cursor di sini */}
-      <div className="bg-gray-900 text-white min-h-screen">
+    <div className="relative bg-gray-900 text-white min-h-screen overflow-hidden">
+      <LightningBackground />
+
+      <div className="relative z-10">
         <Navbar />
         <main>
           <Hero />
@@ -28,7 +22,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
