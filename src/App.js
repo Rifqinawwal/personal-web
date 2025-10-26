@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="relative bg-gray-900 text-white min-h-screen overflow-hidden">
+    <div className="relative bg-blue-900 text-white min-h-screen overflow-hidden">
       <LightningBackground />
 
       <div className="relative z-10">

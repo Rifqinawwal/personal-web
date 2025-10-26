@@ -38,7 +38,7 @@ export const LogoLoop = ({ className }) => {
 // Ubah nama komponen utama agar mudah dipanggil
 const TechLoop = () => {
   return (
-    <section id="tech" className="bg-gray-800 py-20">
+    <section id="tech" className="bg-blue-950 py-20">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-10">Teknologi yang Saya Pelajari</h2>
         <LogoLoop />
