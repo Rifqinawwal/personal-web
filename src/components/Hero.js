@@ -14,8 +14,8 @@ const Hero = () => {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <h1 className="text-5xl font-bold mb-2">Rifqinawwal</h1>
-        <p className="text-xl text-cyan-400 mb-4">Frontend Developer | UI/UX Enthusiast</p>
+        <h1 className="text-5xl font-bold mb-2">Halo Semua</h1>
+        <p className="text-xl text-yellow-400 mb-4">Web Developer | UI/UX Enthusiast</p>
         <p className="text-lg max-w-xl">Selamat datang di portofolio saya. Saya adalah seorang pengembang perangkat lunak dengan fokus pada pembuatan aplikasi web yang modern dan responsif.</p>
       </motion.div>
     </section>

@@ -6,8 +6,35 @@ import { motion } from "framer-motion";
 import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaLaravel, FaFigma } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss, SiMysql } from "react-icons/si";
 
-// 2. Buat array yang berisi komponen ikon Anda
-const yourIcons = [<FaReact />, <SiJavascript />, <FaHtml5 />, <FaCss3Alt />, <SiTailwindcss />, <FaLaravel />, <SiMysql />, <FaFigma />, <FaNodeJs />];
+const yourIcons = [
+  <span style={{ color: "#61DAFB" }}>
+    <FaReact />
+  </span>,
+  <span style={{ color: "#F7DF1E" }}>
+    <SiJavascript />
+  </span>,
+  <span style={{ color: "#E34F26" }}>
+    <FaHtml5 />
+  </span>,
+  <span style={{ color: "#1572B6" }}>
+    <FaCss3Alt />
+  </span>,
+  <span style={{ color: "#06B6D4" }}>
+    <SiTailwindcss />
+  </span>,
+  <span style={{ color: "#FF2D20" }}>
+    <FaLaravel />
+  </span>,
+  <span style={{ color: "#4479A1" }}>
+    <SiMysql />
+  </span>,
+  <span style={{ color: "#F24E1E" }}>
+    <FaFigma />
+  </span>,
+  <span style={{ color: "#339933" }}>
+    <FaNodeJs />
+  </span>,
+];
 
 export const LogoLoop = ({ className }) => {
   return (
@@ -38,7 +65,7 @@ export const LogoLoop = ({ className }) => {
 // Ubah nama komponen utama agar mudah dipanggil
 const TechLoop = () => {
   return (
-    <section id="tech" className="bg-blue-950 py-20">
+    <section id="tech" className="bg-black py-20">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-10">Teknologi yang Saya Pelajari</h2>
         <LogoLoop />

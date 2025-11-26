@@ -1,12 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @keyframes lightning {
-  "0%, 100%": {
+  0%,
+  100% {
+    /* ✅ Benar: Bersih tanpa kutip/titik dua */
     opacity: 0;
   }
-  "25%, 75%": {
+  25%,
+  75% {
+    /* ✅ Benar */
     opacity: 1;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }

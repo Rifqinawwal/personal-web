@@ -34,7 +34,7 @@ const itemVariants = {
 
 const Tech = () => {
   return (
-    <section id="tech" className="bg-blue-950 py-20">
+    <section id="tech" className="bg-black py-20">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-10">Teknologi yang Saya Pelajari</h2>
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-wrap justify-center items-center gap-8 md:gap-12 px-4">
