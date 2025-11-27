@@ -28,7 +28,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-10">Proyek Saya</h2>
+        <h2 className="text-3xl font-bold text-yellow-400 mb-10">Proyek Saya</h2>
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
           {projectData.map((project, index) => (
             <motion.div variants={itemVariants} key={index} className="bg-gray-950 p-6 rounded-lg shadow-lg text-left">

@@ -6,6 +6,7 @@ import TechLoop from "./components/TechLoop";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Navbar />
         <main>
           <Hero />
+          <About />
           <TechLoop />
           <Projects />
           <Contact />
