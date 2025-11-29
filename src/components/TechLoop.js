@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 // 1. Impor ikon-ikon Anda
-import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaLaravel, FaFigma } from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaFigma } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss, SiMysql, SiAdobephotoshop, SiAutodeskmaya } from "react-icons/si";
 
 const yourIcons = [
@@ -30,9 +30,6 @@ const yourIcons = [
   </span>,
   <span style={{ color: "#F24E1E" }}>
     <FaFigma />
-  </span>,
-  <span style={{ color: "#339933" }}>
-    <FaNodeJs />
   </span>,
   <span style={{ color: "#31A8FF" }}>
     <SiAdobephotoshop />
@@ -73,7 +70,8 @@ const TechLoop = () => {
   return (
     <section id="tech" className="bg-black py-20">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold text-yellow-400 mb-10">Teknologi yang Saya Pelajari</h2>
+        <h2 className="text-3xl font-bold text-yellow-400">Skill & Teknologi yang Saya Pelajari</h2>
+        <p className="text-gray-400 mt-4 mb-10">Berikut adalah beberapa proyek yang telah saya kerjakan dengan penuh cinta dan kopi ☕</p>
         <LogoLoop />
       </div>
     </section>

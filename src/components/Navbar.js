@@ -30,10 +30,10 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md p-4 shadow-lg border-b border-white/10">
-      <div className="container mx-auto flex justify-between items-center max-w-6xl px-6">
+      <div className="container mx-auto flex justify-between items-center max-w-7xl px-7">
         {/* LOGO */}
-        <a href="#hero" className="text-3xl font-extrabold text-yellow-400 font-['Parisienne']">
-          Rifqinawwal
+        <a href="#hero" className="text-xl md:text-3xl font-extrabold text-yellow-400 font-['Parisienne']">
+          Rifqinawwal's Portfolio
         </a>
 
         {/* MENU DESKTOP */}
@@ -42,13 +42,13 @@ const Navbar = () => {
             About
           </a>
           <a href="#tech" className="text-white hover:text-yellow-400 font-semibold transition duration-300">
-            Teknologi
+            Technology
           </a>
           <a href="#projects" className="text-white hover:text-yellow-400 font-semibold transition duration-300">
-            Proyek
+            Projects
           </a>
           <a href="#contact" className="text-white hover:text-yellow-400 font-semibold transition duration-300">
-            Kontak
+            Contact
           </a>
         </div>
 
@@ -64,14 +64,17 @@ const Navbar = () => {
         {isOpen && (
           <motion.div variants={menuVariants} initial="hidden" animate="visible" exit="exit" className="md:hidden absolute top-full left-0 w-full bg-black/95 border-b border-white/10 shadow-xl backdrop-blur-lg">
             <div className="flex flex-col items-center py-6 space-y-6">
+              <a href="#about" onClick={() => setIsOpen(false)} className="text-white hover:text-yellow-400 text-lg font-semibold">
+                About
+              </a>
               <a href="#tech" onClick={() => setIsOpen(false)} className="text-white hover:text-yellow-400 text-lg font-semibold">
-                Teknologi
+                Technology
               </a>
               <a href="#projects" onClick={() => setIsOpen(false)} className="text-white hover:text-yellow-400 text-lg font-semibold">
-                Proyek
+                Projects
               </a>
               <a href="#contact" onClick={() => setIsOpen(false)} className="text-white hover:text-yellow-400 text-lg font-semibold">
-                Kontak
+                Contact
               </a>
             </div>
           </motion.div>
