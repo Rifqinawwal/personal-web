@@ -1,5 +1,6 @@
 // src/components/TechLoop.js
 
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // 1. Impor ikon-ikon Anda
@@ -39,39 +40,57 @@ const yourIcons = [
   </span>,
 ];
 
-export const LogoLoop = ({ className }) => {
+export const LogoLoop = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="relative w-full overflow-hidden">
       <motion.div
-        className="flex items-center justify-center gap-10"
+        key={isMobile ? "mobile-mode" : "desktop-mode"}
+        // 👇 PERBAIKAN 1: Tambahkan 'w-max' agar lebar menyesuaikan isi (tidak terpotong)
+        className="flex items-center gap-10 w-max"
         animate={{
-          x: ["-100%", "0%"],
+          // 👇 PERBAIKAN 2: Geser dari 0 ke -50% saja
+          // Karena kita menduplikasi array 2x, saat mencapai -50%,
+          // posisi ikon set ke-2 akan tepat menggantikan set ke-1.
+          x: [0, "-50%"],
           transition: {
             ease: "linear",
-            duration: 20,
+            duration: isMobile ? 30 : 30, // Atur kecepatan di sini
             repeat: Infinity,
           },
         }}
       >
-        {/* 3. Ganti isinya dengan ikon Anda */}
-        {[...yourIcons, ...yourIcons].map((icon, i) => (
-          <div key={i} className="flex-shrink-0 text-7xl text-slate-400">
+        {/* 👇 PERBAIKAN 3: Duplikat ikon menjadi 4x (atau lebih) biar aman di layar lebar */}
+        {[...yourIcons, ...yourIcons, ...yourIcons, ...yourIcons].map((icon, i) => (
+          <div key={i} className="flex-shrink-0 text-7xl">
             {icon}
           </div>
         ))}
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-transparent to-slate-900" />
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black pointer-events-none" />
     </div>
   );
 };
 
-// Ubah nama komponen utama agar mudah dipanggil
+// Komponen Utama
 const TechLoop = () => {
   return (
     <section id="tech" className="bg-black py-20">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold text-yellow-400">Skill & Teknologi yang Saya Pelajari</h2>
-        <p className="text-gray-400 mt-4 mb-10">Berikut adalah beberapa proyek yang telah saya kerjakan dengan penuh cinta dan kopi ☕</p>
+      <div className="container mx-auto text-center px-4">
+        <h2 className="text-3xl font-bold text-yellow-400">Skill & Teknologi yang Saya Pelajari 👨🏻‍💻</h2>
+        <p className="text-gray-400 mt-4 mb-10">Berikut adalah beberapa teknologi yang saya gunakan dalam berkarya</p>
         <LogoLoop />
       </div>
     </section>

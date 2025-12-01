@@ -11,7 +11,7 @@ const Contact = () => {
           {/* --- KOLOM KIRI: Informasi Kontak --- */}
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-400">Let's Connect with me! 😎🤝</h2>
-            <p className="text-gray-400 mb-8 text-lg leading-relaxed">Jangan sungkan buat ngobrol atau kerja sama bareng aku! Gaspol 🚀</p>
+            <p className="text-gray-400 mb-8 text-lg leading-relaxed">Yuk mari ngobrol denganku 🙌</p>
 
             <div className="space-y-6">
               {/* Item Email */}
@@ -69,11 +69,16 @@ const Contact = () => {
               <img src="/assets/qr-code.jpg" alt="QR Code LinkedIn" className="w-40 h-40" />
             </div>
 
-            <p className="text-gray-300 mb-2 flex items-center gap-2 justify-center">
-              Scan atau klik buat connect di{" "}
-              <span className="font-bold text-blue-400 flex items-center gap-1">
-                LinkedIn! <FaLinkedin />
-              </span>
+            <p className="text-gray-300 mb-4 flex flex-col md:flex-row items-center justify-center gap-2 text-center">
+              Scan atau klik buat connect di
+              <a
+                href="https://www.linkedin.com/in/rifqinawwal" // Pastikan link LinkedIn kamu benar
+                target="_blank"
+                rel="noreferrer"
+                className="font-bold text-blue-400 flex mt-0 items-center gap-1 hover:text-blue-300 transition"
+              >
+                LinkedIn! <FaLinkedin size={20} />
+              </a>
             </p>
 
             {/* Tombol Download CV */}

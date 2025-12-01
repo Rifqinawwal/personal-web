@@ -9,7 +9,7 @@ const educationData = [
     major: "Teknik Informatika",
     year: "2021 - 2025",
     description:
-      "Mulai serius nyemplung ke dunia teknologi! Belajar software development, web dev, dan backend. Sekarang jadi cinta mati sama React.js, Tailwind CSS, Express.js, dan Laravel. 😎🚀 [hahaha, becanda gaiss, mana ada cinta mati 😭🙏]",
+      "Di masa kuliah ini, aku mulai benar-benar mengenal dunia teknologi yang sebelumnya sama sekali belum aku sentuh. Mulai dari web development, dasar-dasar pemrograman, sampai UI/UX. Semakin aku belajar, semakin terasa kalau bidang ini cocok banget buat aku. Di sini juga aku mulai menemukan minatku di dunia web, khususnya frontend dan backend development.",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const educationData = [
     major: "Animasi",
     year: "2018 - 2021",
     description:
-      "Awalnya fokus di bidang farmasi, tapi lama-lama kok hati mulai goyah ke dunia teknologi? 🫠✨ Akhirnya lebih sering ngulik coding daripada hafalin rumus obat! 🤣💻, eitss tapi aku kenal coding baru setelah dinyatakan lulus hahahah!!!",
+      "Waktu SMK aku memilih jurusan animasi karena sejak SMP sudah suka menggambar. Dari sini aku belajar banyak tentang teknik menggambar, animasi 2D/3D, sampai jadi 3D Animator untuk beberapa proyek sekolah. Pengalaman di SMK ini bikin sisi kreativitasku berkembang pesat dan sampai sekarang masih sangat membantu dalam desain, UI/UX, dan cara melihat visual secara lebih mendalam.",
   },
 ];
 
@@ -27,7 +27,7 @@ const About = () => {
       <div className="container mx-auto px-6 max-w-4xl">
         {/* Judul Section */}
         <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-yellow-400 mb-2">Riwayat Pendidikan 🎓</h2>
+          <h2 className="text-3xl font-bold text-yellow-400 mb-2">Riwayat Pendidikan 🎓</h2>
         </motion.div>
 
         {/* Timeline Container */}
