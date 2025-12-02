@@ -4,13 +4,10 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // 1. Impor ikon-ikon Anda
-import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaFigma } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaLaravel, FaFigma } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss, SiMysql, SiAdobephotoshop, SiAutodeskmaya } from "react-icons/si";
 
 const yourIcons = [
-  <span style={{ color: "#61DAFB" }}>
-    <FaReact />
-  </span>,
   <span style={{ color: "#F7DF1E" }}>
     <SiJavascript />
   </span>,

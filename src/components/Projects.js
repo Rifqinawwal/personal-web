@@ -4,38 +4,48 @@ import { FaChevronLeft, FaChevronRight, FaGithub, FaExternalLinkAlt } from "reac
 
 // --- DATA PROYEK ---
 const projectData = [
+  // --- Kategori: WEB ---
   {
     id: 1,
-    title: "Gym Website - Gymso",
-    description: "🔥 Gym Website – Landing page kece buat pecinta fitness! 💪🏋️‍♂️ Tampilannya keren, responsif, dan siap bikin semangat nge-gym makin naik! 🚀🔥",
-    tags: ["HTML", "CSS", "JavaScript"],
-    // Ganti URL gambar ini dengan gambar kamu sendiri
-    images: [
-      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop", // Gambar 1
-      "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=1469&auto=format&fit=crop", // Gambar 2
-      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1375&auto=format&fit=crop", // Gambar 3
-    ],
+    category: "web",
+    title: "Balbalans - Website",
+    description: "Balbalans adalah sebuah website yang menyediakan informasi tentang berita sepak bola, berita sepak bolanya akan update otomatis ⚽️",
+    tags: ["HTML", "TailwindCSS", "Laravel"],
+    images: ["/website/1.png", "/website/2.png", "/website/3.png", "/website/4.png", "/website/5.png"],
     links: { demo: "#", repo: "#" },
   },
   {
     id: 2,
-    title: "Sanggar Studio Website",
-    description: "🎨 Sanggar Studio Website – Website keren buat sanggar seni! 🎭🎨 Tampilannya keren, responsif, dan siap bikin semangat berkarya makin tinggi! 🚀🔥",
-    tags: ["HTML", "Bootstrap5", "JavaScript", "SASS"],
-    images: ["https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1480&auto=format&fit=crop", "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1470&auto=format&fit=crop"],
+    category: "web",
+    title: "MovieFlix - Website",
+    description: "MovieFlix merupakan sebuah website landing page yang menyediakan trailer sebuah film 🎬",
+    tags: ["HTML", "CSS", "JavaScript"],
+    images: ["/movie/1.png", "/movie/2.png"],
+    links: { demo: "#", repo: "#" },
+  },
+
+  // --- Kategori: UI/UX ---
+  {
+    id: 3,
+    category: "uiux",
+    title: "Real Madrid App - UI/UX",
+    description: "Ini merupakan design prototype aplikasi mobile dari sebuah tim yang merajai Eropa yang berasal dari negara Spanyol yaitu Real Madrid 👑",
+    tags: ["Figma"],
+    images: ["/madrid/1.png", "/madrid/2.png", "/madrid/3.png", "/madrid/4.png", "/madrid/5.png"],
     links: { demo: "#", repo: "#" },
   },
   {
-    id: 3,
-    title: "E-Commerce Dashboard",
-    description: "🛒 Dashboard admin untuk toko online dengan fitur analitik lengkap. Manajemen produk jadi lebih mudah dan efisien! 📈💰",
-    tags: ["React", "TailwindCSS", "Chart.js"],
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop", "https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=1374&auto=format&fit=crop"],
+    id: 4,
+    category: "uiux",
+    title: "Football Shop - UI/UX",
+    description: "Sebuah design prototype aplikasi mobile toko online yang menyediakan segala hal yang berbau sepak bola 🕺🏼",
+    tags: ["Figma"],
+    images: ["/madrid/1.png", "/madrid/2.png", "/madrid/3.png", "/madrid/4.png", "/madrid/5.png"],
     links: { demo: "#", repo: "#" },
   },
 ];
 
-// --- KOMPONEN KARTU ---
+// --- KOMPONEN KARTU (TANPA ANIMASI MUNCUL) ---
 const ProjectCard = ({ project }) => {
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -48,28 +58,15 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover:border-yellow-400/50 transition-all duration-300"
-    >
+    // 👇 PERBAIKAN: Hapus motion.div, initial, animate, transition. Ganti jadi div biasa.
+    // Ini bikin kartu langsung muncul seketika tanpa loading.
+    <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover:border-yellow-400/50 transition-all duration-300">
       {/* --- BAGIAN SLIDER GAMBAR --- */}
       <div className="relative w-full h-64 bg-gray-900 group">
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={currentImage}
-            src={project.images[currentImage]}
-            alt={project.title}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-full h-full object-cover object-top"
-          />
-        </AnimatePresence>
+        {/* Gambar (Langsung Tampil) */}
+        <img src={project.images[currentImage]} alt={project.title} className="w-full h-full object-cover object-top" />
 
-        {/* Tombol Panah (Hanya muncul jika hover) */}
+        {/* Tombol Panah */}
         <div className="absolute inset-0 flex justify-between items-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button onClick={prevImage} className="bg-black/50 p-2 rounded-full text-white hover:bg-yellow-400 hover:text-black transition">
             <FaChevronLeft />
@@ -79,7 +76,7 @@ const ProjectCard = ({ project }) => {
           </button>
         </div>
 
-        {/* Indikator Titik (Dots) */}
+        {/* Indikator Titik */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {project.images.map((_, idx) => (
             <div key={idx} className={`w-2 h-2 rounded-full transition-all ${idx === currentImage ? "bg-yellow-400 w-4" : "bg-white/50"}`} />
@@ -89,18 +86,7 @@ const ProjectCard = ({ project }) => {
 
       {/* --- BAGIAN DESKRIPSI --- */}
       <div className="p-6">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors">{project.title}</h3>
-          <div className="flex space-x-3">
-            <a href={project.links.github} className="text-gray-400 hover:text-white text-xl">
-              <FaGithub />
-            </a>
-            <a href={project.links.demo} className="text-gray-400 hover:text-white text-xl">
-              <FaExternalLinkAlt />
-            </a>
-          </div>
-        </div>
-
+        <h3 className="text-2xl font-bold text-yellow-400 mb-2">{project.title}</h3>
         <p className="text-gray-300 text-sm mb-6 leading-relaxed">{project.description}</p>
 
         {/* Tags Teknologi */}
@@ -112,24 +98,51 @@ const ProjectCard = ({ project }) => {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 // --- KOMPONEN UTAMA ---
 const Projects = () => {
-  return (
-    <section id="projects" className="py-24 bg-black">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-yellow-400 mb-4">My Projects ✍️</h2>
-          <p className="text-gray-400 mt-4">Mari lihat beberapa karya yang pernah aku buat</p>
-        </motion.div>
+  const [activeTab, setActiveTab] = useState("web");
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {projectData.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+  const filteredProjects = projectData.filter((project) => project.category === activeTab);
+
+  return (
+    <section id="projects" className="py-24 bg-black min-h-screen">
+      <div className="container mx-auto px-6 max-w-6xl">
+        {/* Judul */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-yellow-400 mb-4">My Projects ✍️</h2>
+          <p className="text-gray-400 mt-4">Yuk kepoin beberapa karya yang pernah aku buat</p>
+        </div>
+
+        {/* --- TAB NAVIGASI --- */}
+        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+          {["web", "uiux", "design"].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-6 py-2 rounded-full font-bold transition-all duration-200 border-2 ${
+                activeTab === tab ? "bg-yellow-400 text-black border-yellow-400 scale-105" : "bg-transparent text-gray-400 border-gray-600 hover:border-yellow-400 hover:text-yellow-400"
+              }`}
+            >
+              {tab === "web" ? "🌐 Website" : tab === "uiux" ? "📱 UI/UX" : "🎨 Desain Grafis"}
+            </button>
           ))}
+        </div>
+
+        {/* --- GRID PROYEK --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 min-h-[400px]">
+          {/* Render Biasa (Tanpa AnimatePresence) */}
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project) => <ProjectCard key={project.id} project={project} />)
+          ) : (
+            // Pesan Kosong
+            <div className="col-span-1 md:col-span-2 text-center py-20 text-gray-500">
+              <p>Belum ada proyek di kategori ini. Segera hadir! 🚧</p>
+            </div>
+          )}
         </div>
       </div>
     </section>
