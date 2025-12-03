@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 text-center md:text-left">
           {/* Kolom 1: Quote & Copyright */}
           <div className="lg:col-span-1">
-            <p className="text-black italic mb-6 leading-relaxed">"Jangan ragu buat hubungi aku! Laptop udah siap, kopi udah seduh, tenaga masih full (kayaknya). ☕😆"</p>
+            <p className="text-black italic mb-6 leading-relaxed">"Yuk jangan ragu lagi buat hubungi aku, laptop sama kopi udah siap nih ☕😆"</p>
             <p className="text-gray-500 text-sm">
               &copy; {currentYear} Rifqinawwal.
               <br />
