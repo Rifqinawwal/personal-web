@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import CircularGallery from "./CircularGallery"; // 1. Import komponen baru
 
-// --- DATA PROYEK ---
+// --- DATA PROYEK WEB & UI/UX ---
 const projectData = [
-  // --- Kategori: WEB ---
   {
     id: 1,
     category: "web",
@@ -45,51 +45,30 @@ const projectData = [
   },
 ];
 
-// --- KOMPONEN KARTU (TANPA ANIMASI MUNCUL) ---
+// --- KOMPONEN KARTU (Untuk Web & UI/UX) ---
 const ProjectCard = ({ project }) => {
+  // ... (Kode ProjectCard biarkan sama seperti sebelumnya) ...
+  // Agar tidak kepanjangan, copy paste kode ProjectCard yang lama ke sini
   const [currentImage, setCurrentImage] = useState(0);
-
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % project.images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + project.images.length) % project.images.length);
-  };
+  const nextImage = () => setCurrentImage((prev) => (prev + 1) % project.images.length);
+  const prevImage = () => setCurrentImage((prev) => (prev - 1 + project.images.length) % project.images.length);
 
   return (
-    // 👇 PERBAIKAN: Hapus motion.div, initial, animate, transition. Ganti jadi div biasa.
-    // Ini bikin kartu langsung muncul seketika tanpa loading.
     <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover:border-yellow-400/50 transition-all duration-300">
-      {/* --- BAGIAN SLIDER GAMBAR --- */}
       <div className="relative w-full h-64 bg-gray-900 group">
-        {/* Gambar (Langsung Tampil) */}
         <img src={project.images[currentImage]} alt={project.title} className="w-full h-full object-cover object-top" />
-
-        {/* Tombol Panah */}
         <div className="absolute inset-0 flex justify-between items-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button onClick={prevImage} className="bg-black/50 p-2 rounded-full text-white hover:bg-yellow-400 hover:text-black transition">
+          <button onClick={prevImage} className="bg-black/50 p-2 rounded-full text-white hover:bg-yellow-400 hover:text-black">
             <FaChevronLeft />
           </button>
-          <button onClick={nextImage} className="bg-black/50 p-2 rounded-full text-white hover:bg-yellow-400 hover:text-black transition">
+          <button onClick={nextImage} className="bg-black/50 p-2 rounded-full text-white hover:bg-yellow-400 hover:text-black">
             <FaChevronRight />
           </button>
         </div>
-
-        {/* Indikator Titik */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {project.images.map((_, idx) => (
-            <div key={idx} className={`w-2 h-2 rounded-full transition-all ${idx === currentImage ? "bg-yellow-400 w-4" : "bg-white/50"}`} />
-          ))}
-        </div>
       </div>
-
-      {/* --- BAGIAN DESKRIPSI --- */}
       <div className="p-6">
         <h3 className="text-2xl font-bold text-yellow-400 mb-2">{project.title}</h3>
-        <p className="text-gray-300 text-sm mb-6 leading-relaxed">{project.description}</p>
-
-        {/* Tags Teknologi */}
+        <p className="text-gray-300 text-sm mb-6 line-clamp-3">{project.description}</p>
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag, idx) => (
             <span key={idx} className="px-3 py-1 text-xs font-semibold text-white bg-cyan-600/20 border border-cyan-500/30 rounded-full">
@@ -106,7 +85,20 @@ const ProjectCard = ({ project }) => {
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("web");
 
+  // Filter untuk Web & UI/UX
   const filteredProjects = projectData.filter((project) => project.category === activeTab);
+
+  // 2. Data khusus untuk Circular Gallery (Desain Grafis)
+  // Format: { image: "path/gambar", text: "Judul" }
+  const designGalleryData = [
+    { image: "/desain/1.png" },
+    { image: "/desain/2.png" },
+    { image: "/desain/3.png" },
+    { image: "/desain/4.png" },
+    { image: "/desain/5.png" },
+    { image: "/desain/6.png" },
+    // Tambahkan gambar desain kamu di sini
+  ];
 
   return (
     <section id="projects" className="py-24 bg-black min-h-screen">
@@ -114,10 +106,10 @@ const Projects = () => {
         {/* Judul */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-yellow-400 mb-4">My Projects ✍️</h2>
-          <p className="text-gray-400 mt-4">Yuk kepoin beberapa karya yang pernah aku buat</p>
+          <p className="text-gray-400 mt-4">Pilih kategori untuk melihat karya saya</p>
         </div>
 
-        {/* --- TAB NAVIGASI --- */}
+        {/* Tab Navigasi */}
         <div className="flex justify-center gap-4 mb-12 flex-wrap">
           {["web", "uiux", "design"].map((tab) => (
             <button
@@ -132,15 +124,28 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* --- GRID PROYEK --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 min-h-[400px]">
-          {/* Render Biasa (Tanpa AnimatePresence) */}
-          {filteredProjects.length > 0 ? (
-            filteredProjects.map((project) => <ProjectCard key={project.id} project={project} />)
+        {/* --- LOGIKA TAMPILAN --- */}
+        <div className="min-h-[500px]">
+          {activeTab === "design" ? (
+            // 3. TAMPILAN DESAIN GRAFIS (Circular Gallery)
+            <div style={{ height: "600px", position: "relative" }} className="rounded-2xl overflow-hidden border border-gray-800 bg-gray-900">
+              <CircularGallery
+                items={designGalleryData} // Masukkan data gambar desain
+                bend={3}
+                textColor="#ffffff"
+                borderRadius={0.05}
+              />
+            </div>
           ) : (
-            // Pesan Kosong
-            <div className="col-span-1 md:col-span-2 text-center py-20 text-gray-500">
-              <p>Belum ada proyek di kategori ini. Segera hadir! 🚧</p>
+            // 4. TAMPILAN WEB & UI/UX (Grid Kartu Biasa)
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {filteredProjects.length > 0 ? (
+                filteredProjects.map((project) => <ProjectCard key={project.id} project={project} />)
+              ) : (
+                <div className="col-span-1 md:col-span-2 text-center py-20 text-gray-500">
+                  <p>Belum ada proyek di kategori ini. 🚧</p>
+                </div>
+              )}
             </div>
           )}
         </div>
