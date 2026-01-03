@@ -40,7 +40,7 @@ const projectData = [
     title: "Football Shop - UI/UX",
     description: "Sebuah design prototype aplikasi mobile toko online yang menyediakan segala hal yang berbau sepak bola 🕺🏼",
     tags: ["Figma"],
-    images: ["/madrid/1.png", "/madrid/2.png", "/madrid/3.png", "/madrid/4.png", "/madrid/5.png"],
+    images: ["/fshop/1.png", "/fshop/2.png", "/fshop/3.png"],
     links: { demo: "#", repo: "#" },
   },
 ];
