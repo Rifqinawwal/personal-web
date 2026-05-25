@@ -86,7 +86,7 @@ const TechLoop = () => {
   return (
     <section id="tech" className="bg-black py-20">
       <div className="container mx-auto text-center px-4">
-        <h2 className="text-3xl font-bold text-yellow-400">Skill & Teknologi yang Saya Pelajari 👨🏻‍💻</h2>
+        <h2 className="text-3xl font-bold text-yellow-400">Skill & Teknologi yang Saya Pelajari</h2>
         <p className="text-gray-400 mt-4 mb-10">Berikut adalah beberapa teknologi yang saya gunakan dalam berkarya</p>
         <LogoLoop />
       </div>

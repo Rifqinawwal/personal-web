@@ -10,8 +10,8 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* --- KOLOM KIRI: Informasi Kontak --- */}
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-400">Let's Connect with me! 😎🤝</h2>
-            <p className="text-gray-400 mb-8 text-lg leading-relaxed">Yuk mari ngobrol denganku 🙌</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-400">Let's Connect with me!</h2>
+            <p className="text-gray-400 mb-8 text-lg leading-relaxed">Yuk mari ngobrol denganku </p>
 
             <div className="space-y-6">
               {/* Item Email */}

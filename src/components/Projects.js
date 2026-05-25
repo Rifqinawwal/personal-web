@@ -105,7 +105,7 @@ const Projects = () => {
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Judul */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-yellow-400 mb-4">My Projects ✍️</h2>
+          <h2 className="text-3xl font-bold text-yellow-400 mb-4">My Projects</h2>
           <p className="text-gray-400 mt-4">Pilih kategori untuk melihat karya saya</p>
         </div>
 

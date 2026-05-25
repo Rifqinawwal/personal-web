@@ -20,13 +20,11 @@ const Hero = () => {
         transition={{ duration: 0.6 }}
         className="text-center md:text-left flex-1" // flex-1 agar mengambil ruang yang tersedia
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-3 text-white leading-tight">
-          Hey, aku Rifqi!!! <span className="inline-block animate-bounce">👋</span>
-        </h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-3 text-white leading-tight">Hey, aku Rifqi!!!</h1>
 
         <p className="text-xl md:text-xl font-bold text-yellow-400 mb-2"> Web Developer | UI/UX | Desain Grafis</p>
 
-        <p className="text-lg text-gray-300 mb-8 leading-relaxed">Aku bikin website, desain UI/UX, dan hal-hal digital lain biar hidup makin aesthetic. Scroll aja ke bawah, siapa tahu jodoh—eh maksudnya, jodoh proyek 😄</p>
+        <p className="text-lg text-gray-300 mb-8 leading-relaxed">Aku bikin website, desain UI/UX, dan hal-hal digital lain biar hidup makin aesthetic. Scroll aja ke bawah, siapa tahu jodoh—eh maksudnya, jodoh proyek</p>
 
         <a href="#projects" className="inline-block bg-yellow-400 text-black font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-yellow-300 hover:shadow-yellow-400/30 transition-all transform hover:-translate-y-1">
           See My Projects

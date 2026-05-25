@@ -27,7 +27,7 @@ const About = () => {
       <div className="container mx-auto px-6 max-w-4xl">
         {/* Judul Section */}
         <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-yellow-400 mb-2">Riwayat Pendidikan 🎓</h2>
+          <h2 className="text-3xl font-bold text-yellow-400 mb-2">Riwayat Pendidikan</h2>
         </motion.div>
 
         {/* Timeline Container */}
