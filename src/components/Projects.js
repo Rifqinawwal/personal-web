@@ -119,7 +119,7 @@ const Projects = () => {
                 activeTab === tab ? "bg-yellow-400 text-black border-yellow-400 scale-105" : "bg-transparent text-gray-400 border-gray-600 hover:border-yellow-400 hover:text-yellow-400"
               }`}
             >
-              {tab === "web" ? "🌐 Website" : tab === "uiux" ? "📱 UI/UX" : "🎨 Desain Grafis"}
+              {tab === "web" ? "Website" : tab === "uiux" ? "UI/UX" : "Desain Grafis"}
             </button>
           ))}
         </div>
