@@ -20,7 +20,7 @@ const Hero = () => {
         transition={{ duration: 0.6 }}
         className="text-center md:text-left flex-1" // flex-1 agar mengambil ruang yang tersedia
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-3 text-white leading-tight">Hey, aku Rifqi!!!</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-3 text-white leading-tight">Hai, aku Rifqi</h1>
 
         <p className="text-xl md:text-xl font-bold text-yellow-400 mb-2"> Web Developer | UI/UX | Desain Grafis</p>
 
