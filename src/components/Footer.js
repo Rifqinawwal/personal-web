@@ -1,6 +1,6 @@
 // src/components/Footer.js
 import React from "react";
-import { FaWhatsapp, FaInstagram, FaTelegramPlane, FaTiktok, FaHeart } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaTelegramPlane, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
